@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import "../styles/Dashboard.css";
+import "src/Dashboard.css";
 import { auth, db } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Player from './Player';
