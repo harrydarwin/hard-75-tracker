@@ -3,7 +3,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
-  registerWithEmailAndPassword,
   signInWithGoogle,
 } from "./firebase";
 import "./Register.css";
