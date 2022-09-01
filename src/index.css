@@ -290,6 +290,9 @@ svg {
 
   .nav-bar {
     background-color: #dcdcdc;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: 0;
   }
 
   .counter-action {

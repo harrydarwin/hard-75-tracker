@@ -22,8 +22,7 @@ function Dashboard({ players, goal, highscore, changeScore, removePlayer, addPla
             const data = doc.docs[0].data();
             setName(data.name);
         } catch (err) {
-            console.error(err);
-            alert("An error occured while fetching user data");
+            setName('Brother');
         }
     };
 
@@ -31,7 +30,6 @@ function Dashboard({ players, goal, highscore, changeScore, removePlayer, addPla
         if (loading) return;
         if (!user) return navigate("/");
 
-        console.log(storage)
 
         getPlayers();
         fetchUserName();

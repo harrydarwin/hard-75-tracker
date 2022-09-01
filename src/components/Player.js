@@ -19,9 +19,9 @@ class Player extends PureComponent {
   render() {
 
     const { name, index, score, id, goal, isHighscore, removePlayer, changeScore, player, attempts, currentPlayer } = this.props;
-    // console.log(player.email)
+    console.log(currentPlayer)
     // console.log(currentPlayer.uid, player.uid)
-    const removeBtn = currentPlayer.uid && currentPlayer.uid == player.uid ? <LogoutButton removePlayer={removePlayer} userId={id} failedAttempts={attempts}/> : '';
+    const removeBtn = currentPlayer.uid && currentPlayer.uid == player.uid ? <LogoutButton removePlayer={removePlayer} userId={id} failedAttempts={currentPlayer.attemptsFailed}/> : '';
     console.log(removeBtn)
     const addBtn =  currentPlayer.uid && currentPlayer.uid == player.uid;
     return (

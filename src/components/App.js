@@ -167,7 +167,7 @@ class App extends Component {
 
 
   handleRemovePlayer = (id, prevAttempts) => {
-
+console.log(prevAttempts)
     resetUser(id, prevAttempts);
     this.handleGetPlayers();
     // this.setState(prevState => {
