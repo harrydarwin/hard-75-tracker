@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
-import { auth, db, logout, getDownloadURL, storage, ref } from "./firebase";
+import { auth, db } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Player from './Player';
 import Header from './Header';
 import AddPlayerForm from './AddPlayerForm';
-import Logo from "./Logo";
+
 
 function Dashboard({ players, goal, highscore, changeScore, removePlayer, addPlayer, currentUser, getPlayers, fLogout, getQuote }) {
     const [user, loading, error] = useAuthState(auth);

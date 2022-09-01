@@ -18,12 +18,12 @@ class Player extends PureComponent {
 
   render() {
 
-    const { name, index, score, id, goal, isHighscore, removePlayer, changeScore, player, attempts, currentPlayer } = this.props;
+    const { name, index, score, id, goal, isHighscore, removePlayer, changeScore, player, currentPlayer } = this.props;
     console.log(currentPlayer)
     // console.log(currentPlayer.uid, player.uid)
-    const removeBtn = currentPlayer.uid && currentPlayer.uid == player.uid ? <LogoutButton removePlayer={removePlayer} userId={id} failedAttempts={currentPlayer.attemptsFailed}/> : '';
+    const removeBtn = currentPlayer.uid && currentPlayer.uid === player.uid ? <LogoutButton removePlayer={removePlayer} userId={id} failedAttempts={currentPlayer.attemptsFailed}/> : '';
     console.log(removeBtn)
-    const addBtn =  currentPlayer.uid && currentPlayer.uid == player.uid;
+    const addBtn =  currentPlayer.uid && currentPlayer.uid === player.uid;
     return (
       <div className="player py-1">
         <span className="player-name">
@@ -33,7 +33,7 @@ class Player extends PureComponent {
 
           <Icon isHighscore={isHighscore} />
 
-          { player.displayName != "false" ? player.displayName : name}
+          { player.displayName !== "false" ? player.displayName : name}
         </span>
 
         <Counter

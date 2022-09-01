@@ -14,7 +14,6 @@ import {
     getDocs,
     collection,
     where,
-    addDoc,
     updateDoc,
     setDoc,
     doc
@@ -77,7 +76,7 @@ const getPlayers = async () => {
     let inactivePlayers = [];
     const querySnapshot = await getDocs(collection(db, "users"));
     querySnapshot.forEach((doc) => {
-        if(doc.data().displayName != "false") {
+        if(doc.data().displayName !== "false") {
             // console.log(doc.id, " => ", doc.data());
             currentPlayers.push(doc.data());
         } else {

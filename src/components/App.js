@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { getPlayers, addNewPlayer, getUserDocs, db, dbRef, auth, updatePlayerData, logout, resetUser, registerWithEmailAndPassword, storage, ref, getDownloadURL} from "./firebase";
-import { useAuthState } from "react-firebase-hooks/auth"
-import { collection, getDocs } from "firebase/firestore";
+import { getPlayers, addNewPlayer, auth, updatePlayerData, logout, resetUser, registerWithEmailAndPassword } from "./firebase";
 import PropTypes from 'prop-types';
 import Login from "./Login";
 import Register from "./Register";
 import Reset from "./Reset";
 import Dashboard from "./Dashboard";
-import Player from './Player';
-import Header from './Header';
-import AddPlayerForm from './AddPlayerForm';
 
 
 const quoteArray = [
@@ -122,7 +117,7 @@ class App extends Component {
       this.setState(prevState => ({
         score: prevState.players[index].score += delta,
         players: prevState.players.map(function (player, i) {
-          if (i == index) {
+          if (i === index) {
             return { ...player, lastDate: today }
           }
           return player

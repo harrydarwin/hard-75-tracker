@@ -27,7 +27,7 @@ class AddPlayerForm extends Component {
     render() {
         console.log(this.props.currentPlayer)
         // console.log(this.props, this.props.currentPlayer.displayName == {})
-        if(this.props.currentPlayer.displayName && this.props.currentPlayer.displayName == "false"){
+        if(this.props.currentPlayer.displayName && this.props.currentPlayer.displayName === "false"){
             return (
                 <div className="footerForm">
                     <form onSubmit={this.handleSubmit}>
